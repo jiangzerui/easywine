@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cedarera.menu.persistence.MenuMapper">
+
+  <select id="queryByParentCode" useCache="true"  parameterType="map" resultType="com.cedarera.menu.entity.Menu">
+     SELECT 
+       menu_id as menuId,
+       menu_name as menuName,
+       menu_url as menuUrl,
+       menu_code as menuCode,
+       menu_image as menuImage
+     FROM menu 
+     WHERE 
+     <choose>
+       <when test="parentCode!=null">
+         parent_code = #{parentCode}
+       </when>
+       <otherwise>
+         parent_code is null 
+       </otherwise>
+     </choose>
+     ORDER BY menu_sort asc
+      
+  
+  </select>
+
+</mapper>

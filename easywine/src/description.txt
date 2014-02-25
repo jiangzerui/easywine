@@ -1,0 +1,41 @@
+##关于本框架的说明
+
+本框架所使用的编码为:utf-8
+本框架所使用的JDK和JRE version为:1.6
+jdbc.properties 为访问数据库连接配置文件
+log4j.properties 为日志配置文件
+
+###本框架由于配置文件所限， java包、java类、映射文件(xml)、images、js文件、css文件、jsp文件存放均有规则
+
+##本框架所遵循实体包命名规则为
+1、包命名一律全使用小写 (非强制，建议小写)
+2、包命名规则为先命名该实体的一个包，然后命名该实体的entity包 、persistence包、service包、controller包
+   eg：以user为例 ,包命名的规则应该为
+   
+     --com.study.user              //包
+       --entity                    //存放实体bean包
+         --User.java               //实体bean
+       --persistence               //数据访问、持久层包 
+         --UserMapper.java         //数据访问的接口
+         --UserMapper.xml          //数据访问，MyBatis xml
+       --service                   //service层包
+         --UserService.java        //用户service接口
+         --impl                    //service实现包
+           --UserServiceImpl.java  //service实现类包
+       --controller                //控制层包
+         --UserController.java     //controller类
+           
+##本框架的css,images,js静态文件存放规则
+
+1、css文件放入  /WebContent/styles/**文件夹下,可在该文件夹下新建文件夹
+2、js文件放入     /WebContent/scripts/**文件夹下,可在该文件夹下新建文件夹
+3、images文件放入 /WebContent/images/**文件夹下,可在该文件夹下新建文件夹
+
+##本框架的JSP文件存放规则
+
+1、所有jsp文件，除index.jsp以外 ，均放入/WebContent/WEB-INF/view/jsp/**文件夹下,可在该文件夹下新建文件夹
+
+###spring security
+
+###activiti 5.10
+

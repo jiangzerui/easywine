@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+  	   xmlns:beans="http://www.springframework.org/schema/beans"
+ 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation=
+        "http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/security
+         http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+         
+    <!-- 定义不受保护的URL，必须保证此URL不能转发到受保护的URL否则security会强制需要认证 -->    
+    <http pattern="/home/login" security="none" />
+    <http pattern="/home/doLog" security="none" />
+     
+    <http auto-config="true">
+       <intercept-url pattern="/**" access="ROLE_USER"/>
+       <!-- 定义需要认证时的登录页面 -->
+       <form-login login-page="/home/login" 
+                   default-target-url="/home/main" />
+    </http>
+	<authentication-manager>
+	   <authentication-provider>
+	       <user-service>
+	          <user name="jimi" password="jimispassword" authorities="ROLE_USER, ROLE_ADMIN" />
+	          <user name="bob" password="bobspassword" authorities="ROLE_USER" />
+	       </user-service>
+	    </authentication-provider>
+	 </authentication-manager>
+ </beans:beans>
