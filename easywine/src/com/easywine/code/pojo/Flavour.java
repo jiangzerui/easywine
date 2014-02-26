@@ -5,6 +5,7 @@ public class Flavour {
 	private Integer flavourCode;
 	private Integer flavourType;  //1. aroma   2.palate
 	private String flavourName;
+	private String flavourEName;
 	private String flavourDescription;  //description with classic language 
 	public Integer getFlavourID() {
 		return flavourID;
@@ -35,5 +36,11 @@ public class Flavour {
 	}
 	public void setFlavourType(Integer flavourType) {
 		this.flavourType = flavourType;
+	}
+	public String getFlavourEName() {
+		return flavourEName;
+	}
+	public void setFlavourEName(String flavourEName) {
+		this.flavourEName = flavourEName;
 	}
 }
