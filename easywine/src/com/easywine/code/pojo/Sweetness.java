@@ -3,7 +3,8 @@ package com.easywine.code.pojo;
 public class Sweetness {
 	private Integer sweetnessID;
 	private Integer sweetnessCode;
-	private Integer sweetnessName;
+	private String sweetnessName;
+	private String sweetnessEName;
 	public Integer getSweetnessID() {
 		return sweetnessID;
 	}
@@ -16,10 +17,16 @@ public class Sweetness {
 	public void setSweetnessCode(Integer sweetnessCode) {
 		this.sweetnessCode = sweetnessCode;
 	}
-	public Integer getSweetnessName() {
+	public String getSweetnessName() {
 		return sweetnessName;
 	}
-	public void setSweetnessName(Integer sweetnessName) {
+	public void setSweetnessName(String sweetnessName) {
 		this.sweetnessName = sweetnessName;
+	}
+	public String getSweetnessEName() {
+		return sweetnessEName;
+	}
+	public void setSweetnessEName(String sweetnessEName) {
+		this.sweetnessEName = sweetnessEName;
 	}
 }

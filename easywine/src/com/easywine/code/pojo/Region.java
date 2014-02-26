@@ -1,15 +1,17 @@
 package com.easywine.code.pojo;
 
 public class Region {
-	private Integer regionCodeID;
+	private Integer regionID;
 	private Integer regionCode;
 	private String regionName;
+	private String regionEName;
 	private Country country;
-	public Integer getRegionCodeID() {
-		return regionCodeID;
+	
+	public Integer getRegionID() {
+		return regionID;
 	}
-	public void setRegionCodeID(Integer regionCodeID) {
-		this.regionCodeID = regionCodeID;
+	public void setRegionID(Integer regionID) {
+		this.regionID = regionID;
 	}
 	public Integer getRegionCode() {
 		return regionCode;
@@ -28,5 +30,11 @@ public class Region {
 	}
 	public void setCountry(Country country) {
 		this.country = country;
+	}
+	public String getRegionEName() {
+		return regionEName;
+	}
+	public void setRegionEName(String regionEName) {
+		this.regionEName = regionEName;
 	}
 }
