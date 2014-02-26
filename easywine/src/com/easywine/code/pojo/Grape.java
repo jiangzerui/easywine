@@ -7,6 +7,7 @@ public class Grape {
 	private Integer grapeCode;
 	private String grapeName;
 	private String grapeEName;
+	private String grapeType; // 红葡萄 白葡萄
 	private List<Flavour> classicFlavours;  //一种葡萄的典型风味
 	private Climate climate;
 	private List<Country> classicCountrys;
@@ -65,5 +66,11 @@ public class Grape {
 	}
 	public void setBlends(List<Grape> blends) {
 		this.blends = blends;
+	}
+	public String getGrapeType() {
+		return grapeType;
+	}
+	public void setGrapeType(String grapeType) {
+		this.grapeType = grapeType;
 	}
 }
