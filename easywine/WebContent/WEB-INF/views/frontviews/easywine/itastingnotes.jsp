@@ -12,8 +12,20 @@
     </head>
     <body>
     	 <div class="container">
-    	 	<div>hahahah</div>
-        	<div id="load-main"></div>
+    	 	<div id="common">
+    	 		<form action="" method="post">
+  					<p>生产商: <input type="text" name="fname" /></p>
+  					<p>国家: <input type="text" name="lname" /></p>
+  					<p>地区: <input type="text" name="lname" /></p>
+  					
+  					
+  					<input type="submit" value="Submit" />
+				</form>
+    	 	</div>
+    	 	<div id="load-appearance"></div>
+    	 	<div id="load-nose"></div>
+    	 	<div id="load-palate"></div>
+        	<div id="load-conclustion"></div>
        
          </div>
     </body>
