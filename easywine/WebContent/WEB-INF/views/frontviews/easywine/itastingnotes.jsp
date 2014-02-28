@@ -17,8 +17,6 @@
   					<p>生产商: <input type="text" name="fname" /></p>
   					<p>国家: <input type="text" name="lname" /></p>
   					<p>地区: <input type="text" name="lname" /></p>
-  					
-  					
   					<input type="submit" value="Submit" />
 				</form>
     	 	</div>
