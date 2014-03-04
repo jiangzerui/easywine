@@ -14,9 +14,9 @@
     	 <div class="container">
     	 	<div id="common">
     	 		<form action="" method="post">
-  					<p>生产商: <input type="text" name="fname" /></p>
-  					<p>国家: <input type="text" name="lname" /></p>
-  					<p>地区: <input type="text" name="lname" /></p>
+  					<p>生产商: <input type="text" name="factoryName" /></p>
+  					<p>国家: <input type="text" name="countryName" /></p>
+  					<p>地区: <input type="text" name="regionName" /></p>
   					<input type="submit" value="Submit" />
 				</form>
     	 	</div>

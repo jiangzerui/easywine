@@ -155,7 +155,7 @@ public class CodeDao {
 
 	// 得到所有条件属性
 	public List<Condition> getConditionAll() {
-		String sql = "select * from condition order by condition_code";
+		String sql = "SELECT * FROM `condition` ORDER BY condition_code";
 
 		List<Condition> conditions = jdbcTemplate.query(sql,
 				new RowMapper<Condition>() {
@@ -226,9 +226,35 @@ public class CodeDao {
 		}
 	}
 
-	// 得到所有风味属性
+	// 得到所有香味属性
 	public List<Flavour> getFlavourAll() {
-		String sql = "select * from flavour order by flavour_code";
+		String sql = "select * from flavour WHERE flavour_type = 1 order by flavour_code";
+
+		List<Flavour> flavours = jdbcTemplate.query(sql,
+				new RowMapper<Flavour>() {
+					@Override
+					public Flavour mapRow(ResultSet rs, int arg1)
+							throws SQLException {
+						// TODO Auto-generated method stub
+						Flavour flavour = new Flavour();
+						flavour.setFlavourID(rs.getInt("flavour_id"));
+						flavour.setFlavourCode(rs.getInt("flavour_code"));
+						flavour.setFlavourName(rs.getString("flavour_name"));
+						flavour.setFlavourEName(rs.getString("flavour_e_name"));
+						flavour.setFlavourType(rs.getInt("flavour_type"));
+						return flavour;
+					}
+				});
+		if (flavours.isEmpty()) {
+			return null;
+		} else {
+			return flavours;
+		}
+	}
+	
+	// 得到所有风味属性
+	public List<Flavour> getRelishAll() {
+		String sql = "select * from flavour WHERE flavour_type = 2 order by flavour_code";
 
 		List<Flavour> flavours = jdbcTemplate.query(sql,
 				new RowMapper<Flavour>() {
@@ -254,7 +280,7 @@ public class CodeDao {
 
 	// 得到所有颜色属性
 	public List<Intensity> getIntensityAll() {
-		String sql = "select * from intensity order by intensity_code";
+		String sql = "select * from intensity WHERE intensity_type = 1 order by intensity_code";
 
 		List<Intensity> intensities = jdbcTemplate.query(sql,
 				new RowMapper<Intensity>() {
@@ -263,11 +289,37 @@ public class CodeDao {
 							throws SQLException {
 						// TODO Auto-generated method stub
 						Intensity intensity = new Intensity();
-						intensity.setIntensityID(rs.getInt("flavour_id"));
-						intensity.setIntensityCode(rs.getInt("flavour_code"));
-						intensity.setIntensityName(rs.getString("flavour_name"));
+						intensity.setIntensityID(rs.getInt("intensity_id"));
+						intensity.setIntensityCode(rs.getInt("intensity_code"));
+						intensity.setIntensityName(rs.getString("intensity_name"));
 						intensity.setIntensityEName(rs
-								.getString("flavour_e_name"));
+								.getString("intensity_e_name"));
+						return intensity;
+					}
+				});
+		if (intensities.isEmpty()) {
+			return null;
+		} else {
+			return intensities;
+		}
+	}
+	
+	// 得到所有颜色属性
+	public List<Intensity> getRichAll() {
+		String sql = "select * from intensity WHERE intensity_type = 2 order by intensity_code";
+
+		List<Intensity> intensities = jdbcTemplate.query(sql,
+				new RowMapper<Intensity>() {
+					@Override
+					public Intensity mapRow(ResultSet rs, int arg1)
+							throws SQLException {
+						// TODO Auto-generated method stub
+						Intensity intensity = new Intensity();
+						intensity.setIntensityID(rs.getInt("intensity_id"));
+						intensity.setIntensityCode(rs.getInt("intensity_code"));
+						intensity.setIntensityName(rs.getString("intensity_name"));
+						intensity.setIntensityEName(rs
+								.getString("intensity_e_name"));
 						return intensity;
 					}
 				});

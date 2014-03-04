@@ -35,7 +35,7 @@
  	There is usually no need to include the <context:annotation-config> element when using <context:component-scan>.
  	 -->
  	<!-- 扫描所有的controller 但是不扫描service-->
-	<context:component-scan base-package="com.fesco">
+	<context:component-scan base-package="com.easywine">
 	  <context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
 	  <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
